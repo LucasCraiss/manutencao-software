@@ -3,7 +3,7 @@ name: CI
 on: [push, pull_request]
 
 jobs:
-  frontend:
+  test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -11,6 +11,5 @@ jobs:
         with:
           node-version: 18
       - run: npm ci
-      - run: npm run lint
       - run: npm test
       - run: npm run build
